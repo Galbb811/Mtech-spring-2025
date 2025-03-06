@@ -1,3 +1,9 @@
+
+/*  Press e to draw the ears, h to draw the head, i to draw the eyes, no to draw the nose,
+w to draw the whiskers, m to draw the mouth, and t to draw the teeth
+posution your mouse on any point of the canvas to chnage the size and position
+of a new drwaing withe they keys mentioned before*/\
+
 function setup() {
   createCanvas(800, 800);
   background(220)
