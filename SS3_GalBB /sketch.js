@@ -15,6 +15,12 @@ let y = 400
   if (mouseY < width/2)[
     y -= 0.2
   ]
+  if (mouseX > width/2)[
+    x += 0.2
+  ]
+  if (mouseY > width/2)[
+    y += 0.2
+  ]
 }
 
 function keyPressed(){
