@@ -8,7 +8,7 @@ let T2 = 8000;
 let w = 800;
 let h = 800;
 
-function preLoad()
+function preload()
 {
 Super = loadImage("Images/superwalk.jpg");
 normal = loadImage("Images/normalwalk.jpg");
@@ -28,11 +28,11 @@ function draw()
   T = millis();
 
    if (T > T2){
-    image(Super, w/2, h/2, w, h);
+    image(Super, w/2, h/2, w, h-125);
     text("How I feel walking down the street with epic game music playing", w/2, 50);
    }
    else if (T > T1){
-    image(normal, w/2, h/2, w, h);
-    text("How I feel walking down the street with regualr music playing", w/2, 150);
+    image(normal, w/2, h/2, w, h-125);
+    text("How I feel walking down the street with regualr music playing", w/2, 50);
    }
 }
