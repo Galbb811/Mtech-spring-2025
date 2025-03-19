@@ -14,7 +14,6 @@ function draw() {
   }
 
 }
-
 function scene1() //starting scene
 {
   background(200);
@@ -29,6 +28,7 @@ forest.position(450, 600);
 ship.position(750, 600);
 cave.mouseClicked(scene2);
 forest.mouseClicked(scene3);
+ship.mouseClicked(scene4);
 print(mouseClicked);
 }
 function scene2() //cave
@@ -42,5 +42,12 @@ function scene3 (){
   background(200);
   text('You wake up in a dense forest', 450, 50);
   text('you notice scratchs on the trees', 450, 100);
+  text('what do you do?', 450, 150);
+}
+function scene4 ()
+{
+  background(200);
+  text('You wake up amongst the wreckege of a ship', 450, 50);
+  text('the water is freezing', 450, 100);
   text('what do you do?', 450, 150);
 }
