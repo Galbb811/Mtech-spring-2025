@@ -1,3 +1,6 @@
+// In my midterm I decieded to make a "choose your own adventure" type of thingm I give you a situation
+// and you options to choose what to do, choose wisely or you may end up dead
+
 let scene = 1;
 let b1;
 let b2;
@@ -10,7 +13,7 @@ function setup() {
 }
 
 function draw() {
-  console.log(mouseY)
+  console.log(mouseX)
 if (scene == 1){
     scene1();
     b1 = cave;
@@ -97,6 +100,18 @@ function mousePressed()
   if (mouseX > 153 && mouseX < 249 && mouseY > 602 && mouseY < 650 && scene == 1){
    scene = 2;
   }
+  if (mouseX > 451 && mouseX < 547 && mouseY > 602 && mouseY < 650 && scene == 1){
+    scene = 3;
+   }
+   if (mouseX > 751 && mouseX < 848 && mouseY > 602 && mouseY < 650 && scene == 1){
+    scene = 4;
+   }
+   if (mouseX > 175 && mouseX < 373 && mouseY > 602 && mouseY < 650 && scene == 2){
+    scene = 21;
+   }
+   if (mouseX > 600 && mouseX < 798 && mouseY > 602 && mouseY < 650 && scene == 2){
+    scene = 22;
+   }
 }
 
 
