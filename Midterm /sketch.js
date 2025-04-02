@@ -82,27 +82,90 @@ if (scene == 1){
 
 function mousePressed()
 {
-  if (mouseX > 125&& mouseX < 225 && mouseY > 675 && mouseY < 725 && scene == 1 ){
+  //cave route
+  if (scene === 1 && mouseX > 125&& mouseX < 225 && mouseY > 675 && mouseY < 725 ){
    scene = 2;
   }
-  else if (mouseX > 400 && mouseX < 500 && mouseY > 675 && mouseY < 725 && scene == 1){
-    scene = 3;
-}
-  if (mouseX > 725 && mouseX < 825 && mouseY > 625 && mouseY < 725 && scene == 1){
-    scene = 4;
-   }
-   if (mouseX > 175 && mouseX < 375 && mouseY > 660 && mouseY < 740 && scene == 2){
+  else if (scene === 2 && mouseX > 175 && mouseX < 375 && mouseY > 660 && mouseY < 740 ){
     scene = 21;
    }
-   if (mouseX > 175 && mouseX < 373 && mouseY > 602 && mouseY < 650 && scene == 2){
-    scene = 22;
+   else if ( scene === 2 && mouseX > 600 && mouseX < 800 && mouseY > 660 && mouseY < 740)
+    {
+      scene = 22
    }
-   if (mouseX > 600 && mouseX < 798 && mouseY > 602 && mouseY < 650 && scene == 2){
-    scene = 23;
+   else if (scene === 22 && mouseX > 350 && mouseX < 550 && mouseY > 660 && mouseY < 740){
+    scene = 1
    }
-//    if (mouseX > 600 && mouseX < 798 && mouseY > 602 && mouseY < 650 && scene == 21){
-//     scene = 23;
-// }
+   else if (scene === 21 && mouseX > 175 && mouseX < 375 && mouseY > 660 && mouseY < 740){
+    scene = 23
+   }
+   else if (scene === 23 && mouseX > 350 && mouseX < 550 && mouseY > 660 && mouseY < 740){
+    scene = 1
+   }
+   else if (scene === 21 && mouseX > 600 && mouseX < 800 && mouseY > 660 && mouseY < 740){
+    scene = 24
+   }
+   else if (scene === 24 && mouseX > 350 && mouseX < 550 && mouseY > 660 && mouseY < 740){
+    scene = 1
+   }
+
+   //forest route
+   else if (scene === 1 &&  mouseX > 400 && mouseX < 500 && mouseY > 675 && mouseY < 735){
+    scene = 3
+   }
+   else if (scene === 3 && mouseX > 175 && mouseX < 375 && mouseY > 660 && mouseY < 740 ){
+    scene = 31;
+   }
+   else if (scene === 31 && mouseX > 350 && mouseX < 550 && mouseY > 660 && mouseY < 740){
+    scene = 1
+   }
+   else if ( scene === 3 && mouseX > 600 && mouseX < 800 && mouseY > 660 && mouseY < 740)
+    {
+      scene = 32
+    }
+    else if (scene === 32 && mouseX > 175 && mouseX < 375 && mouseY > 660 && mouseY < 740 ){
+      scene = 33;
+     }
+     else if (scene === 33 && mouseX > 350 && mouseX < 550 && mouseY > 660 && mouseY < 740){
+      scene = 1
+     }
+     else if ( scene === 32 && mouseX > 600 && mouseX < 800 && mouseY > 660 && mouseY < 740)
+      {
+        scene = 34
+      }
+      else if (scene === 34 && mouseX > 350 && mouseX < 550 && mouseY > 660 && mouseY < 740){
+        scene = 1
+       }
+
+      //ship route
+      else if (scene === 1 && mouseX > 725 && mouseX < 825 && mouseY > 675 && mouseY < 725){
+        scene = 4
+      }
+      else if (scene === 4 && mouseX > 175 && mouseX < 375 && mouseY > 660 && mouseY < 740 ){
+        scene = 41;
+      }
+      else if (scene === 41&& mouseX > 350 && mouseX < 550 && mouseY > 660 && mouseY < 740){
+        scene = 1
+       }
+      else if ( scene === 4 && mouseX > 600 && mouseX < 800 && mouseY > 660 && mouseY < 740)
+        {
+          scene = 42
+        }
+        else if (scene === 42 && mouseX > 175 && mouseX < 375 && mouseY > 660 && mouseY < 740 ){
+          scene = 43;
+        }
+        else if (scene === 43 && mouseX > 350 && mouseX < 550 && mouseY > 660 && mouseY < 740){
+          scene = 1
+         }
+        else if ( scene === 42 && mouseX > 600 && mouseX < 800 && mouseY > 660 && mouseY < 740)
+          {
+            scene = 44
+          }
+          else if (scene === 44 && mouseX > 350 && mouseX < 550 && mouseY > 660 && mouseY < 740){
+            scene = 1
+           }
+      
+
   }
 function scene1() //starting scene
 { 
