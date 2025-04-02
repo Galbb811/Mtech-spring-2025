@@ -2,9 +2,47 @@
 // and you options to choose what to do, choose wisely or you may end up dead
 
 let scene = 1;
-let b1; 
-let b2;
+let imgCaveEn;
+let imgForest;
+let imgShip;
+let imgWomen;
+let imgWerewolf;
+let imgSaber;
+let imgScratch;
+let imgSpider;
+let imgWeb;
+let imgVoice;
+let imgCaveEx;
+let imgTreeline;
+let imgWreck;
+let imgFlare
+let imgDrown;
+let imgIce;
+let imgDark;
+let imgOcean;
+let imgSupp;
 
+function preload(){
+  imgWomen = loadImage ('Images/3 women.jpg');
+  imgCaveEx = loadImage ('Images/cave exit.jpg');
+  imgFlare = loadImage ('Images/flare.jpg');
+  imgWeb = loadImage ('Images/cave webs.jpg');
+  imgCaveEn = loadImage ('Images/cave1.jpg');
+  imgDrown = loadImage ('Images/drown.jpg');
+  imgForest = loadImage ('Images/forest.jpg');
+  imgIce = loadImage ('Images/ice cave.jpg');
+  imgSaber = loadImage ('Images/sabe tooth.png');
+  imgWreck = loadImage ('Images/shipwreck.jpg');
+  imgSpider = loadImage ('Images/spider.jpg');
+  imgTreeline = loadImage ('Images/tree line edge.jpg');
+  imgScratch = loadImage ('Images/tree scratch.jpg');
+  imgVoice = loadImage ('Images/voice.jpg');
+  imgWerewolf = loadImage ('Images/werewolves.jpg');
+  imgShip = loadImage ('Images/ship.jpg');
+  imgDark = loadImage ('Images/dark cave.jpg');
+  imgOcean = loadImage ('Images/ocean.jpg');
+  imgSupp = loadImage ('Images/supplies.jpg');
+}
 
 function setup() {
   createCanvas(900, 800);
@@ -170,7 +208,7 @@ function mousePressed()
 function scene1() //starting scene
 { 
 background(200);
-text('welcome to Riveria', 450, 50);
+text('Welcome to Riveria', 450, 50);
 text('A world filled with magic, swords, and everything in between', 450, 100)
 text('Choose your starting point', 450, 150);
 rect(175, 700, 100, 50);
@@ -179,6 +217,9 @@ rect(775, 700, 100, 50);
 text('Cave', 175, 710);
 text('Forest', 450, 710);
 text('Ship', 775, 710);
+image(imgCaveEn, 150, 400, 300, 400);
+image(imgForest, 450, 400, 300, 400);
+image(imgShip, 775, 400, 350, 400);
 }
 function scene2() //cave
 {
@@ -191,6 +232,7 @@ rect( 700, 700, 200, 80);
 text('Look Around', 275, 710);
 text('Try to find', 700, 695);
 text('a way out', 700, 725);
+image(imgDark,450, 400, 700, 450);
 } 
 function scene3() // forest
 { 
@@ -204,6 +246,8 @@ function scene3() // forest
   text('the scratches', 275, 727);
   text('Try to find', 700, 695);
   text('a way out', 700, 725);
+  image(imgScratch, 200, 400, 510, 400,);
+  image(imgTreeline, 700, 400, 490, 400);
 }
 function scene4() //ship
 {
@@ -217,6 +261,8 @@ function scene4() //ship
   text('shore', 275, 725);
   text('Look for', 700, 695);
   text('supplies', 700, 725);
+  image(imgOcean, 200 ,400, 525, 400);
+  image(imgSupp,675 , 400, 450, 400);
 }
 function scene21() //looking around 
 {
@@ -224,18 +270,19 @@ function scene21() //looking around
   text('You look around the cave and take stock', 450, 50);
   text('You realize that everything is covered in huge spiderwebs', 450, 100);
   text('and your legs are stuck', 450, 150);
-  text ('What do you do?', 450, 200);
+  text('What do you do?', 450, 200);
   rect( 275, 700, 200, 80);
   rect( 700, 700, 200, 80);
   text('Try to free', 275, 695);
   text('your legs', 275, 725);
   text('Think of a', 700, 695);
   text('way out', 700, 725);
+  image(imgWeb, 450, 425, 700, 400);
 }
 function scene22() //find a way out DEATH
 {
   background(200);
-  text(' You Are Dead', 450, 50);
+  text('You Are Dead', 450, 50);
   text('You try to move and find your way out of the dark cave', 450, 100);
   text('You realize your legs wont move', 450, 150);
   text('They are stuck in the web, so you try to move more violently', 450, 200);
@@ -244,6 +291,7 @@ function scene22() //find a way out DEATH
   text('Killing you instantly', 450, 350);
   rect( 450, 700, 200, 80);
   text('Try Again', 450, 710);
+  image(imgSpider, 450, 500, 500, 275);
 }
 function scene23() //try to free yourself DEATH
 {
@@ -252,9 +300,10 @@ function scene23() //try to free yourself DEATH
   text('You try to free your legs from the webs moving violently', 450, 100);
   text('As you try to free your legs', 450, 150);
   text('the spider sneaks up behiend you and pierces through your chest', 450, 200);
-  text('killing you instanty', 450, 250);
+  text('Killing you instanty', 450, 250);
   rect( 450, 700, 200, 80);
   text('Try Again', 450, 710);
+  image(imgSpider, 450, 450, 500, 275);
 }
 function scene24() //dont move and think
 {
@@ -264,9 +313,10 @@ function scene24() //dont move and think
   text('You notice some glowing writing on a wall nearby', 450, 150);
   text('As soon as you read it, it vanishes, and your hands catch fire', 450, 200);
   text('Yet you dont burn, but everything else in the cave does', 450, 250);
-  text ('You manage to escape the cave, after burnnig all of it', 450, 300);
+  text('You manage to escape the cave, after burnnig all of it', 450, 300);
   rect( 450, 700, 200, 80);
   text('Play Again', 450, 710);
+  image(imgCaveEx, 450, 490, 700, 325);
 }
 function scene31() //investigate the scraths Death
 {
@@ -279,6 +329,7 @@ function scene31() //investigate the scraths Death
   text('Your vision fades to black as the werewolf closes in', 450,300);
   rect( 450, 700, 200, 80);
   text('Try Again', 450, 710);
+  image(imgWerewolf, 450, 500, 600, 300);
 }
 function scene32() // find a way out
 {
@@ -294,6 +345,8 @@ text('Follow the', 275, 695);
 text('voices', 275, 725);
 text('Ignore the', 700, 695);
 text('voices', 700, 725);
+image(imgVoice, 200, 450, 500, 380);
+image(imgTreeline, 700, 450, 500, 380);
 }
 function scene33() //follow the voices Death
 {
@@ -305,6 +358,7 @@ function scene33() //follow the voices Death
   text('twist and contort, as they devour you whole', 450, 250);
   rect( 450, 700, 200, 80);
   text('Try Again', 450, 710);
+  image(imgWomen, 450, 450, 500, 350);
 }
 function scene34() //ignore the voices 
 {
@@ -314,6 +368,7 @@ function scene34() //ignore the voices
   text('You spot a road leading to a city', 450, 150);
   rect( 450, 700, 200, 80);
   text('Play Again', 450, 710);
+  image(imgTreeline, 450, 400, 700, 450);
 }
 function scene41() //Swim to shore Death
 {
@@ -324,6 +379,7 @@ function scene41() //Swim to shore Death
   text('You freeze to death and sink to the depths', 450, 200);
   rect( 450, 700, 200, 80);
   text('Try Again', 450, 710);
+  image(imgDrown, 450, 430, 700, 400);
 }
 function scene42() //look for supplies
 {
@@ -339,6 +395,8 @@ function scene42() //look for supplies
   text('the flares', 275, 725);
   text('Explore the', 700, 695);
   text('cave', 700, 725);
+  image(imgFlare, 250, 450, 450, 390);
+  image(imgCaveEn, 700, 450, 450, 390);
 }
 function scene43() // shoot the flares Death
 {
@@ -349,6 +407,7 @@ function scene43() // shoot the flares Death
   text('They close in on you, ready to pounce and eat you', 450, 200);
   rect( 450, 700, 200, 80);
   text('Try Again', 450, 710);
+  image(imgSaber, 450, 430, 700, 420);
 }
 function scene44() //explore the cave
 {
@@ -360,4 +419,5 @@ function scene44() //explore the cave
   text('Your vision returns, but you seem to be in a city now', 450, 250);
   rect( 450, 700, 200, 80);
   text('Play Again', 450, 710);
+  image(imgIce, 450, 455, 700, 395);
 }
