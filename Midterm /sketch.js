@@ -358,7 +358,7 @@ function scene33() //follow the voices Death
   text('twist and contort, as they devour you whole', 450, 250);
   rect( 450, 700, 200, 80);
   text('Try Again', 450, 710);
-  image(imgWomen, 450, 450, 500, 350);
+  image(imgWomen, 450, 450, 600, 350);
 }
 function scene34() //ignore the voices 
 {
