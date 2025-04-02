@@ -23,7 +23,7 @@ let imgOcean;
 let imgSupp;
 
 function preload(){
-  imgWomen = loadImage ('Images/3 women.jpg');
+  imgWomen = loadImage ('Images/3 dryads.jpg');
   imgCaveEx = loadImage ('Images/cave exit.jpg');
   imgFlare = loadImage ('Images/flare.jpg');
   imgWeb = loadImage ('Images/cave webs.jpg');
@@ -224,7 +224,7 @@ image(imgShip, 775, 400, 350, 400);
 function scene2() //cave
 {
 background(200);
-text('You wake up in dark cave', 450, 50);
+text('You wake up in a dark cave', 450, 50);
 text('You notice glowing writing on the wall', 450, 100);
 text('What do you do?', 450, 150);
 rect( 275, 700, 200, 80);
