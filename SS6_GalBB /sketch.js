@@ -4,14 +4,14 @@ let pics = [];
 
 
 function preload() {
-  sounds[0] = loadSound("bass.wav");
-  sounds[1] = loadSound("snare.wav");
-  sounds[2] = loadSound("smalltom.wav");
-  sounds[3] = loadSound("bigtom.wav");
-  sounds[4] = loadSound("floor.wav");
-  sounds[5] = loadSound("crash.wav");
-  sounds[6] = loadSound("ride.wav");
-  sounds[7] = loadSound("hi-hat.wav");
+  sounds[0] = loadSound("sound/bass.wav");
+  sounds[1] = loadSound("sound/snare.wav");
+  sounds[2] = loadSound("sound/smalltom.wav");
+  sounds[3] = loadSound("sound/bigtom.wav");
+  sounds[4] = loadSound("sound/floor.wav");
+  sounds[5] = loadSound("sound/crash.wav");
+  sounds[6] = loadSound("sound/ride.wav");
+  sounds[7] = loadSound("sound/hi-hat.wav");
 
   pics[0] = loadImage('pics/bass.jpg');
   pics[1] = loadImage('pics/snare.jpg');
@@ -35,36 +35,36 @@ function setup() {
 function draw() {
   background(220);
   
-if (keyCode == 66){
-  image(pic[0], width/2, height/2, 500, 500);
+if (keyCode == 66){ //B
+  image(pics[0], width/2, height/2, 500, 500);
   sounds[0].play();
 }
-if (keyCode == 83){
-  image(pic[1], width/2, height/2, 500, 500);
-  sound[1].play();
+else if (keyCode == 83){ //S
+  image(pics[1], width/2, height/2, 500, 500);
+  sounds[1].play();
 }
-if (keyCode == 87){
-  image(pic[2], width/2, height/2, 500, 500);
-  sound[2].play();
+else if (keyCode == 87){ //W
+  image(pics[2], width/2, height/2, 500, 500);
+  sounds[2].play();
 }
-if (keyCode == 69){
-  image(pic[3], width/2, height/2, 500, 500);
-  sound[3].play();
+else if (keyCode == 69){ //E
+  image(pics[3], width/2, height/2, 500, 500);
+  sounds[3].play();
 }
-if (keyCode == 70){
-  image(pic[4], width/2, height/2, 500, 500);
-  sound[4].play();
+else if (keyCode == 70){ //F
+  image(pics[4], width/2, height/2, 500, 500);
+  sounds[4].play();
 }
-if (keyCode == 67){
-  image(pic[5], width/2, height/2, 500, 500);
-  sound[5].play();
+else if (keyCode == 67){ //C
+  image(pics[5], width/2, height/2, 500, 500);
+  sounds[5].play();
 }
-if (keyCode == 82){
-  image(pic[6], width/2, height/2, 500, 500);
-  sound[6].play();
+else if (keyCode == 82){ //R
+  image(pics[6], width/2, height/2, 500, 500);
+  sounds[6].play();
 }
-if (keyCode == 72){
-  image(pic[7], width/2, height/2, 500, 500);
-  sound[7].play();
+else if (keyCode == 72){ //H
+  image(pics[7], width/2, height/2, 500, 500);
+  sounds[7].play();
 }
 }
