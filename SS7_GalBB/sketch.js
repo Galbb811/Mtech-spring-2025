@@ -460,14 +460,14 @@ function scene44() //explore the cave
 {
   for (let i = 0; i < 145; i = i + 0.1){
     textSize(i);}
-    text('You Are Dead', width/2, height/2);
+    text('You Are Dead', this.x, this.y);
 } 
 color(){
   fill(255, 0, 0);
 } 
 scalemove(){
   textSize(30);
-  text('You Are Dead', 450,50);
+  text('You Are Dead', this.x ,this.y - 350);
 }
  }
 
