@@ -34,37 +34,57 @@ function setup() {
 
 function draw() {
   background(220);
-  
-if (keyCode == 66){ //B
-  image(pics[0], width/2, height/2, 500, 500);
-  sounds[0].play();
+  if (keyCode == 66){ //B
+    image(pics[0], width/2, height/2, 500, 500);
+  }
+  else if (keyCode == 83){ //S
+    image(pics[1], width/2, height/2, 500, 500);
+  }
+  else if (keyCode == 87){ //W
+    image(pics[2], width/2, height/2, 500, 500);
+  }
+  else if (keyCode == 69){ //E
+    image(pics[3], width/2, height/2, 500, 500);
+  }
+  else if (keyCode == 70){ //F
+    image(pics[4], width/2, height/2, 500, 500);
+  }
+  else if (keyCode == 67){ //C
+    image(pics[5], width/2, height/2, 500, 500);
+  }
+  else if (keyCode == 82){ //R
+    image(pics[6], width/2, height/2, 500, 500);
+  }
+  else if (keyCode == 72){ //H
+    image(pics[7], width/2, height/2, 500, 500);
+  }
+
 }
-else if (keyCode == 83){ //S
-  image(pics[1], width/2, height/2, 500, 500);
-  sounds[1].play();
-}
-else if (keyCode == 87){ //W
-  image(pics[2], width/2, height/2, 500, 500);
-  sounds[2].play();
-}
-else if (keyCode == 69){ //E
-  image(pics[3], width/2, height/2, 500, 500);
-  sounds[3].play();
-}
-else if (keyCode == 70){ //F
-  image(pics[4], width/2, height/2, 500, 500);
-  sounds[4].play();
-}
-else if (keyCode == 67){ //C
-  image(pics[5], width/2, height/2, 500, 500);
-  sounds[5].play();
-}
-else if (keyCode == 82){ //R
-  image(pics[6], width/2, height/2, 500, 500);
-  sounds[6].play();
-}
-else if (keyCode == 72){ //H
-  image(pics[7], width/2, height/2, 500, 500);
-  sounds[7].play();
-}
+
+function keyPressed(){
+  if (keyCode == 66){ //B
+    sounds[0].play();
+  }
+  else if (keyCode == 83){ //S
+    sounds[1].play();
+  }
+  else if (keyCode == 87){ //W
+    sounds[2].play();
+  }
+  else if (keyCode == 69){ //E
+    sounds[3].play();
+  }
+  else if (keyCode == 70){ //F
+    sounds[4].play();
+  }
+  else if (keyCode == 67){ //C
+    sounds[5].play();
+  }
+  else if (keyCode == 82){ //R
+    sounds[6].play();
+  }
+  else if (keyCode == 72){ //H
+    sounds[7].play();
+  }
+
 }
