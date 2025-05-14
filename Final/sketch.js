@@ -2,48 +2,32 @@
 // and you options to choose what to do, choose wisely or you may end up dead
 
 let scene = 1;
-let img = [];
-let scenetext = [];
-let imgCaveEn;
-let imgForest;
-let imgShip;
-let imgWomen;
-let imgWerewolf;
-let imgSaber;
-let imgScratch;
-let imgSpider;
-let imgWeb;
-let imgVoice;
-let imgCaveEx;
-let imgTreeline;
-let imgWreck;
-let imgFlare
-let imgDrown;
-let imgIce;
-let imgDark;
-let imgOcean;
-let imgSupp;
+let Ctime = 0
+let txtS = 0
+let imgScene = []
+let imgPos1 = 1000
+let imgPosL = -255 
+let imgPosR = 1155
 
 function preload(){
-  imgWomen = loadImage ('Images/3 dryads.jpg');
-  imgCaveEx = loadImage ('Images/cave exit.jpg');
-  imgFlare = loadImage ('Images/flare.jpg');
-  imgWeb = loadImage ('Images/cave webs.jpg');
-  imgCaveEn = loadImage ('Images/cave1.jpg');
-  imgDrown = loadImage ('Images/drown.jpg');
-  imgForest = loadImage ('Images/forest.jpg');
-  imgIce = loadImage ('Images/ice cave.jpg');
-  imgSaber = loadImage ('Images/sabe tooth.png');
-  imgWreck = loadImage ('Images/shipwreck.jpg');
-  imgSpider = loadImage ('Images/spider.jpg');
-  imgTreeline = loadImage ('Images/tree line edge.jpg');
-  imgScratch = loadImage ('Images/tree scratch.jpg');
-  imgVoice = loadImage ('Images/voice.jpg');
-  imgWerewolf = loadImage ('Images/werewolves.jpg');
-  imgShip = loadImage ('Images/ship.jpg');
-  imgDark = loadImage ('Images/dark cave.jpg');
-  imgOcean = loadImage ('Images/ocean.jpg');
-  imgSupp = loadImage ('Images/supplies.jpg');
+  imgScene[0] = imgCaveEn = loadImage ('Images/cave1.jpg');
+  imgScene[1] = imgForest = loadImage ('Images/forest.jpg');
+  imgScene[2] = imgShip = loadImage ('Images/ship.jpg');
+  imgScene[3] = imgDark = loadImage ('Images/dark cave.jpg');
+  imgScene[4] = imgScratch = loadImage ('Images/tree scratch.jpg');
+  imgScene[5] = imgTreeline = loadImage ('Images/tree line edge.jpg');
+  imgScene[6] = imgOcean = loadImage ('Images/ocean.jpg');
+  imgScene[7] = imgSupp = loadImage ('Images/supplies.jpg');
+  imgScene[8] = imgWeb = loadImage ('Images/cave webs.jpg');
+  imgScene[9] = imgSpider = loadImage ('Images/spider.jpg');
+  imgScene[10] = imgCaveEx = loadImage ('Images/cave exit.jpg');
+  imgScene[11] = imgWerewolf = loadImage ('Images/werewolves.jpg');
+  imgScene[12] = imgVoice = loadImage ('Images/voice.jpg');
+  imgScene[13] = imgWomen = loadImage ('Images/3 dryads.jpg');
+  imgScene[14] = imgDrown = loadImage ('Images/drown.jpg');
+  imgScene[15] = imgFlare = loadImage ('Images/flare.jpg');
+  imgScene[16] = imgSaber = loadImage ('Images/sabe tooth.png');
+  imgScene[17] = imgIce = loadImage ('Images/ice cave.jpg');
 }
 
 function setup() {
@@ -55,76 +39,78 @@ function setup() {
 }
 
 function draw() {
+  // Ctime = millis;
+  print(scene);
+
 if (scene == 1){
     scene1();
-  }
+    imgUp(imgScene[0], 150, imgPos1, 300, 400);
+    imgUp(imgScene[1], 450, imgPos1, 300, 400);
+    imgUp(imgScene[2], 775, imgPos1, 350, 400);
+    }
   if (scene == 2){
     scene2();
-  
+    imgUp(imgScene[3], 450, imgPos1, 700, 450);
   }
   if (scene == 3){
     scene3();
-    
+    imgL(imgScene[4], imgPosL, 400, 510, 400);
+    imgR(imgScene[5], imgPosR, 400, 490, 400);
   }
   if (scene == 4){
     scene4();
-   
+    imgL(imgScene[6], imgPosL, 400, 525, 400);
+    imgR(imgScene[7], imgPosR, 400, 472, 400);
   }
   if (scene == 21){
     scene21();
-    
+    imgUp(imgScene[8], 450, imgPos1, 700, 380);
   }
   if (scene == 22){
     scene22();
-    
   }
   if (scene == 23){
     scene23();
-   
   }
   if (scene == 24){
     scene24();
-   
   }
   if (scene == 31){
     scene31();
-   
   }
   if (scene == 32){
     scene32();
-   
+    imgL(imgScene[12], imgPosL, 450, 500, 380);
+    imgR(imgScene[5], imgPosR, 450, 500, 380);
   }
   if (scene == 33){
     scene33();
-   
   }
   if (scene == 34){
     scene34();
-  
   }
   if (scene == 41){
     scene41();
-   
   }
   if (scene == 42){
     scene42();
-    
+    imgL(imgScene[15], imgPosL, 450, 500, 390);
+    imgR(imgScene[0], imgPosR, 450, 500, 390);
   }
   if (scene == 43){
     scene43();
-   
   }
   if (scene == 44){
     scene44();
-    
   }
 }
 
 function mousePressed()
 {
   //cave route
-  if (scene === 1 && mouseX > 125&& mouseX < 225 && mouseY > 675 && mouseY < 725 ){
+  if (scene === 1 && mouseX > 125&& mouseX < 225 && mouseY > 675 && mouseY < 725){
    scene = 2;
+   imgPos1 = 1000
   }
   else if (scene === 2 && mouseX > 175 && mouseX < 375 && mouseY > 660 && mouseY < 740 ){
     scene = 21;
@@ -135,18 +121,27 @@ function mousePressed()
    }
    else if (scene === 22 && mouseX > 350 && mouseX < 550 && mouseY > 660 && mouseY < 740){
     scene = 1
+    imgPos1 = 1000
+    imgPosL = -255 
+    imgPosR = 1155
    }
    else if (scene === 21 && mouseX > 175 && mouseX < 375 && mouseY > 660 && mouseY < 740){
     scene = 23
    }
    else if (scene === 23 && mouseX > 350 && mouseX < 550 && mouseY > 660 && mouseY < 740){
     scene = 1
+    imgPos1 = 1000
+    imgPosL = -255 
+    imgPosR = 1155
    }
    else if (scene === 21 && mouseX > 600 && mouseX < 800 && mouseY > 660 && mouseY < 740){
     scene = 24
    }
    else if (scene === 24 && mouseX > 350 && mouseX < 550 && mouseY > 660 && mouseY < 740){
     scene = 1
+    imgPos1 = 1000
+    imgPosL = -255 
+    imgPosR = 1155
    }
 
    //forest route
@@ -158,16 +153,24 @@ function mousePressed()
    }
    else if (scene === 31 && mouseX > 350 && mouseX < 550 && mouseY > 660 && mouseY < 740){
     scene = 1
+    imgPos1 = 1000
+    imgPosL = -255 
+    imgPosR = 1155
    }
    else if ( scene === 3 && mouseX > 600 && mouseX < 800 && mouseY > 660 && mouseY < 740)
     {
       scene = 32
+      imgPosL = -255 
+      imgPosR = 1155
     }
     else if (scene === 32 && mouseX > 175 && mouseX < 375 && mouseY > 660 && mouseY < 740 ){
       scene = 33;
      }
      else if (scene === 33 && mouseX > 350 && mouseX < 550 && mouseY > 660 && mouseY < 740){
       scene = 1
+      imgPos1 = 1000
+      imgPosL = -255 
+      imgPosR = 1155
      }
      else if ( scene === 32 && mouseX > 600 && mouseX < 800 && mouseY > 660 && mouseY < 740)
       {
@@ -175,6 +178,9 @@ function mousePressed()
       }
       else if (scene === 34 && mouseX > 350 && mouseX < 550 && mouseY > 660 && mouseY < 740){
         scene = 1
+        imgPos1 = 1000
+        imgPosL = -255 
+        imgPosR = 1155
        }
 
       //ship route
@@ -186,16 +192,24 @@ function mousePressed()
       }
       else if (scene === 41&& mouseX > 350 && mouseX < 550 && mouseY > 660 && mouseY < 740){
         scene = 1
+        imgPos1 = 1000
+        imgPosL = -255 
+        imgPosR = 1155
        }
       else if ( scene === 4 && mouseX > 600 && mouseX < 800 && mouseY > 660 && mouseY < 740)
         {
           scene = 42
+          imgPosL = -255 
+          imgPosR = 1155
         }
         else if (scene === 42 && mouseX > 175 && mouseX < 375 && mouseY > 660 && mouseY < 740 ){
           scene = 43;
         }
         else if (scene === 43 && mouseX > 350 && mouseX < 550 && mouseY > 660 && mouseY < 740){
           scene = 1
+          imgPos1 = 1000
+          imgPosL = -255 
+          imgPosR = 1155
          }
         else if ( scene === 42 && mouseX > 600 && mouseX < 800 && mouseY > 660 && mouseY < 740)
           {
@@ -203,6 +217,9 @@ function mousePressed()
           }
           else if (scene === 44 && mouseX > 350 && mouseX < 550 && mouseY > 660 && mouseY < 740){
             scene = 1
+            imgPos1 = 1000
+            imgPosL = -255 
+            imgPosR = 1155
            }
       
 
@@ -219,9 +236,9 @@ rect(775, 700, 100, 50);
 text('Cave', 175, 710);
 text('Forest', 450, 710);
 text('Ship', 775, 710);
-image(imgCaveEn, 150, 400, 300, 400);
-image(imgForest, 450, 400, 300, 400);
-image(imgShip, 775, 400, 350, 400);
+// image(imgScene[0], 150, imgPos1, 300, 400);
+// image(imgScene[1], 450, imgPos1, 300, 400);
+// image(imgScene[2], 775, imgPos1, 350, 400);
 }
 function scene2() //cave
 {
@@ -234,7 +251,7 @@ rect( 700, 700, 200, 80);
 text('Look Around', 275, 710);
 text('Try to find', 700, 695);
 text('a way out', 700, 725);
-image(imgDark,450, 400, 700, 450);
+// image(imgScene[3],450, imgPos1, 700, 450);
 } 
 function scene3() // forest
 { 
@@ -248,8 +265,8 @@ function scene3() // forest
   text('the scratches', 275, 727);
   text('Try to find', 700, 695);
   text('a way out', 700, 725);
-  image(imgScratch, 200, 400, 510, 400,);
-  image(imgTreeline, 700, 400, 490, 400);
+  // image(imgScene[4], 200, 400, 510, 400,);
+  // image(imgScene[5], 700, 400, 490, 400);
 }
 function scene4() //ship
 {
@@ -263,8 +280,8 @@ function scene4() //ship
   text('shore', 275, 725);
   text('Look for', 700, 695);
   text('supplies', 700, 725);
-  image(imgOcean, 200 ,400, 525, 400);
-  image(imgSupp,675 , 400, 450, 400);
+  // image(imgScene[6], 200 ,400, 525, 400);
+  // image(imgScene[7],675 , 400, 450, 400);
 }
 function scene21() //looking around 
 {
@@ -279,7 +296,7 @@ function scene21() //looking around
   text('your legs', 275, 725);
   text('Think of a', 700, 695);
   text('way out', 700, 725);
-  image(imgWeb, 450, 425, 700, 400);
+  // image(imgScene[8], 450, 425, 700, 400);
 }
 function scene22() //find a way out DEATH
 {
@@ -293,7 +310,7 @@ function scene22() //find a way out DEATH
   text('Killing you instantly', 450, 350);
   rect( 450, 700, 200, 80);
   text('Try Again', 450, 710);
-  image(imgSpider, 450, 500, 500, 275);
+  image(imgScene[9], 450, 500, 500, 275);
 }
 function scene23() //try to free yourself DEATH
 {
@@ -305,7 +322,7 @@ function scene23() //try to free yourself DEATH
   text('Killing you instanty', 450, 250);
   rect( 450, 700, 200, 80);
   text('Try Again', 450, 710);
-  image(imgSpider, 450, 450, 500, 275);
+  image(imgScene[9], 450, 450, 500, 275);
 }
 function scene24() //dont move and think
 {
@@ -318,7 +335,7 @@ function scene24() //dont move and think
   text('You manage to escape the cave, after burnnig all of it', 450, 300);
   rect( 450, 700, 200, 80);
   text('Play Again', 450, 710);
-  image(imgCaveEx, 450, 490, 700, 325);
+  image(imgScene[10], 450, 490, 700, 325);
 }
 function scene31() //investigate the scraths Death
 {
@@ -331,7 +348,7 @@ function scene31() //investigate the scraths Death
   text('Your vision fades to black as the werewolf closes in', 450,300);
   rect( 450, 700, 200, 80);
   text('Try Again', 450, 710);
-  image(imgWerewolf, 450, 500, 600, 300);
+  image(imgScene[11], 450, 500, 600, 300);
 }
 function scene32() // find a way out
 {
@@ -347,8 +364,8 @@ text('Follow the', 275, 695);
 text('voices', 275, 725);
 text('Ignore the', 700, 695);
 text('voices', 700, 725);
-image(imgVoice, 200, 450, 500, 380);
-image(imgTreeline, 700, 450, 500, 380);
+// image(imgScene[12], 200, 450, 500, 380);
+// image(imgScene[5], 700, 450, 500, 380);
 }
 function scene33() //follow the voices Death
 {
@@ -360,7 +377,7 @@ function scene33() //follow the voices Death
   text('twist and contort, as they devour you whole', 450, 250);
   rect( 450, 700, 200, 80);
   text('Try Again', 450, 710);
-  image(imgWomen, 450, 450, 600, 350);
+  image(imgScene[13], 450, 450, 600, 350);
 }
 function scene34() //ignore the voices 
 {
@@ -370,7 +387,7 @@ function scene34() //ignore the voices
   text('You spot a road leading to a city', 450, 150);
   rect( 450, 700, 200, 80);
   text('Play Again', 450, 710);
-  image(imgTreeline, 450, 400, 700, 450);
+  image(imgScene[5], 450, 400, 700, 450);
 }
 function scene41() //Swim to shore Death
 {
@@ -381,7 +398,7 @@ function scene41() //Swim to shore Death
   text('You freeze to death and sink to the depths', 450, 200);
   rect( 450, 700, 200, 80);
   text('Try Again', 450, 710);
-  image(imgDrown, 450, 430, 700, 400);
+  image(imgScene[14], 450, 430, 700, 400);
 }
 function scene42() //look for supplies
 {
@@ -397,8 +414,8 @@ function scene42() //look for supplies
   text('the flares', 275, 725);
   text('Explore the', 700, 695);
   text('cave', 700, 725);
-  image(imgFlare, 250, 450, 450, 390);
-  image(imgCaveEn, 700, 450, 450, 390);
+  // image(imgScene[15], 250, 450, 450, 390);
+  // image(imgScene[0], 700, 450, 450, 390);
 }
 function scene43() // shoot the flares Death
 {
@@ -409,7 +426,7 @@ function scene43() // shoot the flares Death
   text('They close in on you, ready to pounce and eat you', 450, 200);
   rect( 450, 700, 200, 80);
   text('Try Again', 450, 710);
-  image(imgSaber, 450, 430, 700, 420);
+  image(imgScene[16], 450, 430, 700, 420);
 }
 function scene44() //explore the cave
 {
@@ -421,38 +438,71 @@ function scene44() //explore the cave
   text('Your vision returns, but you seem to be in a city now', 450, 250);
   rect( 450, 700, 200, 80);
   text('Play Again', 450, 710);
-  image(imgIce, 450, 455, 700, 395);
+  image(imgScene[17], 450, 455, 700, 395);
 }
- class Scenedyn
- {
-  constructor(tempX, tempY)
-  {
-    this.x = tempX;
-    this.y = tempY;
-  }
-  deadyn()
-  {
 
-  }
-  textdyn()
-  {
-
-  }
-  imgfadein()
-  {
-
-  }
-  imgdwnup()
-  {
-
-  }
-  imgLR()
-  {
-
-  }
-  imgRL()
+function Txtfly()
 {
 
 }
- }
 
+function Txtdead(dead, x, y)
+{
+  textSize(txtS)
+  text(dead, x, y)
+  if (txtS == 145){
+    txtS = 145;
+    fill(255, 0, 0);
+  }
+  else if (txtS > 145){
+    txtS ++;
+  }
+  else if (txtS == 145 && fill == (255,0 ,0)){}
+    txtS--;
+    if (txtS == 30){
+      txtS = 30;
+  }
+}
+
+function Txtype()
+{
+
+}
+
+function imgUp(img, x, y, width, height)
+{
+  image(img, x, y, width, height);
+  if (imgPos1 == 400){
+    imgPos1 = 400
+  }
+  else if (imgPos1 > 400){
+    imgPos1 --;
+  }
+}
+
+function imgL(img, x, y , width, height)
+{
+  image(img, x, y, width, height);
+  if (imgPosL == 200){
+    imgPosL = 200;
+  }
+  else if (imgPosL < 200){
+    imgPosL = imgPosL + 2
+  }
+}
+
+function imgR(img, x, y, width, height)
+{
+  image(img, x, y, width, height);
+  if (imgPosR == 700){
+    imgPosR = 700;
+  }
+  else if (imgPosR > 700){
+    imgPosR = imgPosR - 2
+  }
+}
+
+function imgFade(img, x, y, width, height)
+{
+  image(img, x, y, width, height);
+}
