@@ -11,8 +11,9 @@ let imgPosL = -255;
 let imgPosR = 1155;
 let dead = "You Are Dead";
 let LposX = 0;
-let LposY = 0;
-let linelength = 0;
+let RposX = 0;
+let UposY = 0;
+let linelength;
 
 function preload(){
   imgScene[0] = imgCaveEn = loadImage ('Images/cave1.jpg');
@@ -47,13 +48,11 @@ function setup() {
   rectMode(CENTER);
   imageMode(CENTER);
   textAlign(CENTER);
-  textSize(30);
 }
 
 function draw() {
   // Ctime = millis;
-  print(scene);
-
+  
 if (scene == 1){
     scene1();
     imgUp(imgScene[0], 150, imgPos1, 300, 400, 1);
@@ -241,6 +240,7 @@ function scene1() //starting scene
 { 
 background(200);
 fill(0);
+textSize(30);
 text('Welcome to Riveria,', 450, 50);
 text('A world filled with magic, swords, and everything in between', 450, 100);
 text('Choose your starting point', 450, 150);
@@ -260,6 +260,7 @@ function scene2() //cave
 {
 background(200);
 fill(0);
+textSize(30);
 text('You wake up in a dark cave', 450, 50);
 text('You notice glowing writing on the wall', 450, 100);
 text('What do you do?', 450, 150);
@@ -276,6 +277,7 @@ function scene3() // forest
 { 
   background(200);
   fill(0);
+  textSize(30);
   text('You wake up in a dense forest', 450, 50);
   text('You notice scratchs on the trees', 450, 100);
   text('What do you do?', 450, 150);
@@ -294,6 +296,7 @@ function scene4() //ship
 {
   background(200);
   fill(0);
+  textSize(30);
   text('You wake up amongst the wreckege of a ship', 450, 50);
   text('The water is freezing', 450, 100);
   text('What do you do?', 450, 150);
@@ -312,6 +315,7 @@ function scene21() //looking around
 {
   background(200);
   fill(0);
+  textSize(30);
   text('You look around the cave and take stock', 450, 50);
   text('You realize that everything is covered in huge spiderwebs', 450, 100);
   text('and your legs are stuck', 450, 150);
@@ -329,9 +333,10 @@ function scene21() //looking around
 function scene22() //find a way out DEATH
 {
   background(200);
-  fill(255, 0, 0);
-  text('You Are Dead', 450, 50);
+  // fill(255, 0, 0);
+  // text('You Are Dead', 450, 50);
   fill(0);
+  textSize(30);
   text('You try to move and find your way out of the dark cave', 450, 100);
   text('You realize your legs wont move', 450, 150);
   text('They are stuck in the web, so you try to move more violently', 450, 200);
@@ -343,13 +348,15 @@ function scene22() //find a way out DEATH
   fill(0);
   text('Try Again', 450, 710);
   image(imgScene[9], 450, 500, 500, 275);
+  Txtdead(dead, 450, 400);
 }
 function scene23() //try to free yourself DEATH
 {
   background(200);
-  fill(255, 0, 0);
-  text('You Are Dead', 450, 50);
+  // fill(255, 0, 0);
+  // text('You Are Dead', 450, 50);
   fill(0);
+  textSize(30);
   text('You try to free your legs from the webs moving violently', 450, 100);
   text('As you try to free your legs', 450, 150);
   text('the spider sneaks up behiend you and pierces through your chest', 450, 200);
@@ -359,11 +366,13 @@ function scene23() //try to free yourself DEATH
   fill(0);
   text('Try Again', 450, 710);
   image(imgScene[9], 450, 450, 500, 275);
+  Txtdead(dead, 450, 400);
 }
 function scene24() //dont move and think
 {
   background(200);
   fill(0);
+  textSize(30);
   text('You try not to move as to not alert whatever made these webs', 450, 50);
   text('You think, as you scan the area around you', 450, 100);
   text('You notice some glowing writing on a wall nearby', 450, 150);
@@ -379,9 +388,10 @@ function scene24() //dont move and think
 function scene31() //investigate the scraths Death
 {
   background(200);
-  fill(255, 0, 0);
-  text('You Are Dead', 450, 50)
+  // fill(255, 0, 0);
+  // text('You Are Dead', 450, 50)
   fill(0);
+  textSize(30);
   text('You notice some scratches on a few trees, and investigate', 450, 100);
   text('You follow the scratches, and end up in a clearing', 450, 150);
   text('Suddenly you feel a burning pain across your chest', 450, 200);
@@ -392,11 +402,13 @@ function scene31() //investigate the scraths Death
   fill(0);
   text('Try Again', 450, 710);
   image(imgScene[11], 450, 500, 600, 300);
+  Txtdead(dead, 450, 400);
 }
 function scene32() // find a way out
 {
 background(200);
 fill(0);
+textSize(30);
 text('As you notice some strange scratches on a few trees', 450, 50);
 text('You decide not to stay and find out who or what made them', 450, 100);
 text('You walk away, towards what seems like the edge of the tree line', 450, 150);
@@ -416,9 +428,10 @@ text('voices', 700, 725);
 function scene33() //follow the voices Death
 {
   background(200);
-  fill(255, 0, 0);
-  text('You Are Dead', 450, 50);
+  // fill(255, 0, 0);
+  // text('You Are Dead', 450, 50);
   fill(0);
+  textSize(30);
   text('You follow the voices you hear luring you away from the tree line', 450, 100);
   text('As you reach the voices, you see 3 beautiful women welcoming you', 450, 150);
   text('As you draw closer Suddenly the faces of the three women', 450, 200);
@@ -428,11 +441,13 @@ function scene33() //follow the voices Death
   fill(0);
   text('Try Again', 450, 710);
   image(imgScene[13], 450, 450, 600, 350);
+  Txtdead(dead, 450, 400);
 }
 function scene34() //ignore the voices 
 {
   background(200);
   fill(0);
+  textSize(30);
   text('You deciede to ignore the voices, and head for the tree line', 450, 50);
   text('You manage to leave the forest', 450, 100);
   text('You spot a road leading to a city', 450, 150);
@@ -445,9 +460,10 @@ function scene34() //ignore the voices
 function scene41() //Swim to shore Death
 {
   background(200);
-  fill(255, 0, 0);
-  text('You Are Dead', 450, 50);
+  // fill(255, 0, 0);
+  // text('You Are Dead', 450, 50);
   fill(0);
+  textSize(30);
   text('You try to swim to shore so you pick a direction and swim', 450, 100);
   text('But the freezing water soon overtakes you', 450, 150);
   text('You freeze to death and sink to the depths', 450, 200);
@@ -456,11 +472,13 @@ function scene41() //Swim to shore Death
   fill(0);
   text('Try Again', 450, 710);
   image(imgScene[14], 450, 430, 700, 400);
+  Txtdead(dead, 450, 400);
 }
 function scene42() //look for supplies
 {
   background(200);
   fill(0);
+  textSize(30);
   text('You decide to dive down to the wreckage of the ship', 450, 50);
   text('Looking for supplies, You find flares, a flare gun, and some food', 450, 100);
   text('You resurface from the wreckage', 450, 150);
@@ -480,9 +498,10 @@ function scene42() //look for supplies
 function scene43() // shoot the flares Death
 {
   background(200);
-  fill(255, 0, 0);
-  text('You Are Dead', 450, 50);
+  // fill(255, 0, 0);
+  // text('You Are Dead', 450, 50);
   fill(0);
+  textSize(30);
   text('You decide to shoot one of your flares', 450, 100);
   text('The flare you shot alerted nearby predators', 450, 150);
   text('They close in on you, ready to pounce and eat you', 450, 200);
@@ -491,11 +510,13 @@ function scene43() // shoot the flares Death
   fill(0);
   text('Try Again', 450, 710);
   image(imgScene[16], 450, 430, 700, 420);
+  Txtdead(dead, 450, 400);
 }
 function scene44() //explore the cave
 {
   background(200);
   fill(0);
+  textSize(30);
   text('You deciede to explore the cave you found', 450, 50);
   text('At the end you find a monolith with some glowing writing on it', 450, 100);
   text('You examine the writing', 450, 150);
@@ -508,48 +529,48 @@ function scene44() //explore the cave
   image(imgScene[17], 450, 455, 700, 395);
 }
 
-function Txtfly(linelnegth)
+function Txtfly(linelength)
 {
-  for (let i=0; i < linelnegth; i = random(1,3)){
+  for (let i=0; i = 3; i = i +random(1,3)){
     if (i == 1){
       LposX = -255
     } 
      else if (i == 2){
-      LposX = 1155
+      RposX = 1155
     }
      else if (i == 3){
-      LposY =  -200
+      UposY =  -200
     }
   }
 if (i == 1){
   LposX ++
 }
 else if (i == 2){
-  LposX --
+  RposX --
 }
 else if (i == 3){
-  LposY ++
+  UposY ++
 }
 }
 function Txtdead(dead, x, y)
 {
+  fill(255, 0, 0);
   textSize(txtS)
   text(dead, x, y)
-  if (txtS == 145){
+  if (txtS >= 145){
     txtS = 145;
-    fill(255, 0, 0);
   }
  else if (txtS < 145){
     txtS ++;
   }
-   if (txtS == 145 && fill == (255, 0, 0)){
+   if (txtS == 145){
     txtS--;
-    // if (txtS == 30){
-    //   txtS = 30
-    //  if (txtS == 30){
-    //    text(dead, x, y - 350)
-    //   }
-    // }
+    if (txtS == 30){
+      txtS = 30
+     if (txtS == 30){
+       text(dead, 450, 50)
+      }
+    }
   }
 
   
@@ -557,9 +578,9 @@ function Txtdead(dead, x, y)
   
 }
 
-function Txtype()
+function Txtype(char, x, y)
 {
-
+  text(char, x, y)
 }
 
 function imgUp(img, x, y, width, height, rate)
